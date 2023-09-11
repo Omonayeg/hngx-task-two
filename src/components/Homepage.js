@@ -9,7 +9,8 @@ const Homepage = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      fetch()
+      fetch('https://api.themoviedb.org/3/movies')
+    //   https://api.themoviedb.org/3/movies/[movie_id]
         .then((res) => {
           if (!res.ok) {
             throw Error("Couldn't fetch movies....");
@@ -32,7 +33,7 @@ const Homepage = () => {
     <div className="homepage">
 
       {isLoading && <div>Loading...</div>}
-      
+
       {error && <div>{error}</div>}
      
       <HeroSection/> 
