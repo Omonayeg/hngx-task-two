@@ -1,5 +1,10 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +15,22 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.hero-section {
+  background-color: brown;
+}
+
+.top-section-hero, .logo-area, .signin-area {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.bottom-section-hero {
+  margin: 120px 25px;
+  float: left;
+  width: 280px;
+  text-align: left;
+  padding: 10px;
 }
