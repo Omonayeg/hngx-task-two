@@ -19,18 +19,26 @@ code {
 
 .hero-section {
   background-color: brown;
+  pad: 10px 6px;
+  color: white;
+  font-size: 0.8rem;
+
+}
+
+.top-section-hero {
+margin: auto 25px auto;
 }
 
 .top-section-hero, .logo-area, .signin-area {
   display: flex;
   justify-content: space-between;
   gap: 10px;
+  padding-top: 7px;
 }
 
 .bottom-section-hero {
-  margin: 120px 25px;
-  float: left;
+  margin: 90px 25px 55px;
   width: 280px;
   text-align: left;
-  padding: 10px;
+  padding-bottom: 70px;
 }

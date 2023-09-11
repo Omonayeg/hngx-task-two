@@ -1,45 +1,44 @@
+import HeroSection from "./HeroSection";
+import MovieList from "./MovieList";
+import { useEffect, useState } from "react";
+
 const Homepage = () => {
-    return ( 
-        <div className="homepage">
-            <div className="hero-section">
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState([]);
+  const [error, setError] = useState("");
 
-                <div className="top-section-hero">
-                    <div className="logo-area">
-                        <img src="" alt="logo" />
-                        <h4>MovieBox</h4>
-                    </div>
+  useEffect(() => {
+    setTimeout(() => {
+      fetch()
+        .then((res) => {
+          if (!res.ok) {
+            throw Error("Couldn't fetch movies....");
+          }
+          return res.json();
+        })
+        .then((data) => {
+          setData(data);
+          setIsLoading(false);
+          setError("");
+        })
+        .catch((err) => {
+          setError(err);
+          setIsLoading(false);
+        });
+    }, 300);
+  }, []);
 
-                    <div className="searchbar">
-                        <form action="">
-                            <input type="text" placeholder="Whatdo you want to watch?" />
-                        </form>
-                    </div>
+  return (
+    <div className="homepage">
 
-                    <div className="signin-area">
-                        <h4>sign in</h4>
-                        <img src="" alt="hamburger-menu" />
-                    </div>
-                </div>
+      {isLoading && <div>Loading...</div>}
+      
+      {error && <div>{error}</div>}
+     
+      <HeroSection/> 
+      <MovieList />
+    </div>
+  );
+};
 
-                <div className="bottom-section-hero">
-                    <h3 className="movie-title">JOHN WICK 3</h3>
-                    <div className="rating">
-                        97%
-                    </div>
-                    <div className="description">
-                        Lorem ipsum dolor, sit amet consectetur 
-                        Lorem ipsum dolor, sit amet consectetur 
-                        Lorem ipsum dolor, sit amet consectetur 
-                        Lorem ipsum dolor, sit amet consectetur 
-                        Lorem ipsum dolor, sit amet consectetur 
-
-                    </div>
-                    <button className="watch-trailer">Watch Trailer</button>
-                </div>
-
-            </div>
-        </div>
-     );
-}
- 
 export default Homepage;
