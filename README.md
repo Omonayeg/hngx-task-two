@@ -58,3 +58,51 @@ Note: Ensure that you have carefully added the TMDB API key (incase you insist o
 
 # 😍 Contribution
 Contributions are always welcome, open a **Pull Request** and help us improve our project.
+
+1.  Fork this repository and create a project folder on your local machine
+
+2. Navigate to the terminal (pointing to your project folder/directory), Clone and then open it up on your prefered code editor
+```bash 
+git clone https://github.com/Omonayeg/hngx-task-two.git
+
+```
+
+3.  Open terminal and set upstream branch:  
+```bash 
+git remote add upstream https://github.com/Omonayeg/hngx-task-two.git
+
+```
+
+4.  Pull upstream to get the latest update from the original repo (https://github.com/Omonayeg/HNGx.git)
+```bash
+git pull upstream main
+```
+
+5.  Create a new branch for the task your are doing eg: 
+```bash
+git checkout -b support-module
+```
+
+6.  After making changes, do
+```bash
+git add .
+```
+
+7.  Commit your changes with a descriptive commit message 
+```bash
+git commit -m "commit message"
+```
+
+8.  To make sure there are no conflicts:
+```bash
+git pull upstream main
+```
+
+9.  Push changes to your new branch: 
+```bash
+git push origin your-current-branch-name
+```
+
+10. Create a pull request to the main branch
+
+
