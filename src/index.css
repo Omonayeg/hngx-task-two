@@ -437,6 +437,7 @@ cursor: pointer;
 .topratedbtn button {
   background-color: #BE123C;
   width: 178px;
+  height: auto;
   padding: 9px;
   border: none;
   border-radius: 6px;
