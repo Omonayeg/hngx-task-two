@@ -74,7 +74,7 @@ git remote add upstream https://github.com/Omonayeg/hngx-task-two.git
 
 ```
 
-4.  Pull upstream to get the latest update from the original repo (https://github.com/Omonayeg/HNGx.git)
+4.  Pull upstream to get the latest update from the original repo (https://github.com/Omonayeg/hngx-task-two.git)
 ```bash
 git pull upstream main
 ```
