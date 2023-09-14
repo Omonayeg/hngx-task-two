@@ -456,7 +456,7 @@ cursor: pointer;
 display: flex;
 justify-content: center;
 align-items: center;
-width: 400px;
+max-width: 400px;
 padding: 7px;
 Height: 50px;
 Top :578px;

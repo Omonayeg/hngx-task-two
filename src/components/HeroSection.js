@@ -61,6 +61,7 @@ const HeroSection = () => {
               backgroundImage: `url(${searchBtn})`,
               backgroundRepeat: "no-repeat",
               backgroundPosition: "right",
+              fontSize: '1.1rem'
             }}
             onChange={(e) => {
               setSearch(e.target.value);
