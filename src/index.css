@@ -1,27 +1,76 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  gap: 10px;
+}
+
+.logo {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 100px;
+}
+
+.search-box {
+  flex-grow: .5;
+  text-align: center;
+  margin: 0 20px;
+}
+
+.search-box input[type="text"] {
+  width: 90%;
+  padding: 8px;
+  border-radius: 6px;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+
+@media screen and (max-width: 768px) {
+  .logo img {
+      max-width: 80px;
+  }
+
+  .search-box {
+      flex-grow: 2;
+  }
+
+  .bottom-section- h2 {
+    font-size: 18px;
+  }
+  
 }
 
 .hero-section {
-  background-color: brown;
   pad: 10px 6px;
   color: white;
-  font-size: 0.8rem;
+  font-size: 1rem;
 
 }
 
@@ -36,9 +85,427 @@ margin: auto 25px auto;
   padding-top: 7px;
 }
 
+
+
 .bottom-section-hero {
-  margin: 90px 25px 55px;
-  width: 280px;
+  font-family: 'DM Sans', sans-serif;
+  margin: 90px 85px 55px;
+  font-weight: 700;
+  /* max-width: 200px; */
   text-align: left;
   padding-bottom: 70px;
+  font-size: 30px;
+}
+
+div .description {
+  max-width: 300px;
+  font-size: 0.7rem;
+}
+
+.watch-trailer {
+  width: Hug (169px);
+  height: Hug (36px);
+  padding: 6px 16px 6px 16px;
+  margin-top: 10px;
+  border-radius: 6px;
+  gap: 8px;
+  background-color:  #BE123C;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  
+}
+
+
+/* MOVIE LIST */
+
+/* .wrapper {
+  
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}  */
+
+h3 {
+  font-size: .95rem;
+}
+
+
+.movielist-head {
+  margin: 10px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  gap: 70px;
+}
+
+.cards {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+.card:hover {
+  /* background-color: white; */
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+.movie-info {
+  width: 200px;
+}
+
+.movie-info p {
+  font-size: .7rem;
+  font-weight: 700;
+  color: rgb(124, 117, 117);
+}
+
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+
+
+/* ==== SIMPLE FOOTER ==== */
+
+div > .footer {
+  display: table;
+  width: 90vw;
+  height: 8rem;
+  text-align: center;
+  /* padding: 2px; */
+  font-size: .875rem;
+  margin-top: 90px;
+}
+
+.footer {
+  display: table-cell;
+  vertical-align: middle;
+  margin: auto;
+  
+}
+
+footer small {
+  font-size: 1rem;
+  color: #ccc;
+  letter-spacing: .025rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.footer-nav {
+  margin: 8px 0px;
+}
+
+.footer-nav a {
+  color: black;
+  text-decoration: none;
+  margin: 0 .5rem;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.footer-nav a:hover {
+  font-size: .90rem;
+  transition: color .15s ease-in-out;
+}
+
+strong {
+  font-weight: 500;
+}
+
+.socials a img {
+  width: 18px;
+  margin: 2px 15px;
+}
+
+.socials a img:hover {
+  width: 20px;
+  transition: ease-in-out;
+}
+
+
+/* Base styles for the modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9); /* White background with some opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure the modal appears on top of other content */
+  overflow: hidden;
+}
+
+/* Base styles for the modal content */
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto; /* Add scroll if content exceeds modal height */
+}
+
+/* Styles for the close button */
+.modal-content button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 16px;
+  color: #333; /* Text color for close button */
+}
+
+/* Styles for the search results in the modal */
+.modal-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.modal-content ul li {
+  margin-bottom: 20px;
+}
+
+/* Styles for h4 and p in search results */
+.modal-content h4 {
+  font-size: 20px;
+  margin: 0;
+  color: #333; /* Text color for headings */
+}
+
+.modal-content p {
+  font-size: 16px;
+  color: #666; /* Text color for descriptions */
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+  .modal-content {
+    max-width: 90%;
+    max-height: 90%;
+  }
+}
+
+/* Additional responsive styles for even smaller screens can be added here */
+
+
+/* DETAILS PAGE */
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  height: 110vh;
+  background-color: white;
+  padding: 20px;
+  border-radius: 0 20px 20px 0;
+  border: .5px solid #666666;
+}
+
+.sidebar ul {
+  margin-top: 40px;
+  list-style-type: none;
+  padding: 8px;
+}
+
+.sidebar li {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.sidebar li:hover {
+  background-color: #BE123C1A;
+  color: white !important;
+  padding: 7px 0;
+  /* width: 100%; */
+  transition: ease-in-out;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color:  #666666;
+  
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.main-content img {
+  align-items: center;
+  margin: auto;
+  margin-left: 20px;
+ border-radius:20px;
+ width: 96%;
+ image-rendering: pixelated;
+ height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+      flex-direction: column;
+  }
+
+  .sidebar {
+      height: 25vh;
+      width: 100%;
+      overflow: auto;
+      border-radius: 0 0 0 6px;
+  }
+
+  .details-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .column-right p {
+    text-align: left;
+   }
+}
+
+.details-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column-left {
+  flex: 1;
+  padding: 10px;
+}
+
+.column-right {
+  /* flex: 1; */
+  padding: 5px;
+  text-align: right;
+}
+
+.column-right .group {
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  margin: 5px;
+  padding: 10px;
+ 
+} 
+
+.directors p span {
+font-size: 15px;
+font-weight: 500;
+line-height: 30px;
+letter-spacing: 0em;
+text-align: left;
+color: #BE123C;
+
+}
+
+.topratedbtn {
+display: flex;
+align-items: center;
+gap: 5px;
+max-width: 785px;
+height: auto;
+top: 886px;
+left: 275px;
+border-radius: 10px;
+border: 1px solid #C7C7C7;
+cursor: pointer;
+
+}
+
+.topratedbtn button {
+  background-color: #BE123C;
+  width: 178px;
+  padding: 9px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+
+}
+
+.showtimesbtn {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.showtimesbtn button {
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 400px;
+padding: 7px;
+Height: 50px;
+Top :578px;
+Left :1081px;
+}
+
+.showtimes {
+  background-color: #BE123C;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+.more-watch {
+  background-color: #ffccd9;
+  border: none;
+  border-radius: 6px;
+}
+
+ .column-left p {
+ /* max-width: 608px; */
+ font-size: 18px;
+} 
+
+.column-right p img, .column-right button img {
+  max-width: 16px;
+  margin: 0 6px;
+}
+
+
+/* NotFound.css */
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f7f7f7; /* Background color for the Not Found page */
+  font-family: Arial, sans-serif;
+}
+
+.not-found h1 {
+  font-size: 100px;
+  margin-bottom: 20px;
+  color: #333; /* Text color for the "404" */
+}
+
+.not-found p {
+  font-size: 24px;
+  color: #666; /* Text color for the error message */
 }
