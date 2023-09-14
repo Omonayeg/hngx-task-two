@@ -53,7 +53,8 @@ Note: Ensure that you have carefully added the TMDB API key (incase you insist o
 
 # 🍿 Demo 
 
-- Check out our live demo at https://bluebirdmovies.netlify.app/ 
+- Check out our live demo at
+  https://moviebox-discover.vercel.app/
    
 
 # 😍 Contribution
