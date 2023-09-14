@@ -1,5 +1,5 @@
 <h1 align="center">Moviebox</h1>
-BlueBird-Movies is a React-based movie discovery website that allows users to search for movies by title, view top rated movies and veiw more details about them, The website is designed to be user-friendly and visually appealing.
+Moviebox is a React-based movie discovery website that allows users to search for movies by title, view top rated movies and veiw more details about them, The website is designed to be user-friendly and visually appealing.
 <hr/>
 
 <hr/>
