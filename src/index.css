@@ -61,10 +61,14 @@ body {
       flex-grow: 2;
   }
 
-  .bottom-section- h2 {
-    font-size: 18px;
+  .bottom-section-hero  {
+    display: block;
+    text-align: center;
   }
   
+  .bottom-section-hero h2 {
+    font-size: 29px;
+  }
 }
 
 .hero-section {
