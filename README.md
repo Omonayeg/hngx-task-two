@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+<h1 align="center">Moviebox</h1>
+BlueBird-Movies is a React-based movie discovery website that allows users to search for movies by title, view top rated movies and veiw more details about them, The website is designed to be user-friendly and visually appealing.
+<hr/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<hr/>
 
-## Available Scripts
+# 🍿 Features 
 
-In the project directory, you can run:
+- Search movies: users can search for movies by title
+- Top Rated Movies: displays a section for top rated movies
+- Movie Details: users can view detailed information about each movie
 
-### `npm start`
+<hr/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# 🍿 Technology
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Moviebox is built using the following technologies:
 
-### `npm test`
+- ReactJS
+- TMDB API
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<hr/>
 
-### `npm run build`
+# 🍿 How to Run the Website on Your System
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Step 1: Download and Extract the Code
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Firstly, download the entire website code and extract the ZIP file to a folder on your local system.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Step 2: Obtain the TMDB Movies API Key 
 
-### `npm run eject`
+Before starting the website, you will need to obtain the TMDB Movies API key,
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### ▶️ Get TMDB API Key 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Go to https://www.themoviedb.org/ and log in.
+- Click on your user profile picture in the navigation bar, and select "Settings".
+- In the settings, select "API" and generate an API key.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+NG; You can skip STEP 2 as my API KEY is available in the code.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Step 3: Run the Website
 
-## Learn More
+Open your code editor (such as VS Code) and navigate to the project directory. Then, open a terminal and run the following command:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm run dev
+```
+This will start the application. Open a web browser and navigate to http://localhost:3000 to access the website.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Note: Ensure that you have carefully added the TMDB API key (incase you insist on using yours)
+<hr/>
 
-### Code Splitting
+# 🍿 Demo 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Check out our live demo at https://bluebirdmovies.netlify.app/ 
+   
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# 😍 Contribution
+Contributions are always welcome, open a **Pull Request** and help us improve our project.
