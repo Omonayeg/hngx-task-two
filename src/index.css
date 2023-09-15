@@ -368,6 +368,10 @@ strong {
 
 }
 
+.column-left .row .details-overview {
+  font-size: 16px;
+ }
+
 @media screen and (max-width: 1040px) {
   .container {
     flex-direction: column;
@@ -385,22 +389,24 @@ strong {
  }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 885px) {
  
   .details-container {
     display: flex;
     flex-direction: column;
-  /* max-width: 350px; */
+    justify-content: center;
+    align-items: center;
+    
 
   }
 
-  .column-right p {
+  /* .column-right p {
     text-align: left;
-   }
+   } */
 
-   .column-left, .column-right {
-    max-width: 360px;
-   }
+   /* .column-left, .column-right {
+    
+   } */
 }
 
 .details-container {
