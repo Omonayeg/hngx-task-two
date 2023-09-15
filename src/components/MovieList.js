@@ -7,7 +7,7 @@ const MovieList = ({ movies }) => {
   const sortedMovies = movies.sort((a, b) => b.popularity - a.popularity);
 
   // Slice the first 10 movies to get the top 10 by popularity
-  const top10Movies = sortedMovies.slice(0, 12);
+  const top10Movies = sortedMovies.slice(0, 10);
 
   // Function to format the date to UTC format
   const formatDateToUTC = (dateString) => {
@@ -29,7 +29,7 @@ const MovieList = ({ movies }) => {
       <div className="cards">
         {top10Movies.map((movie) => (
           <div key={movie.id} className="card" data-testid="movie-card">
-            <Link to={`/movie_details/${movie.id}`} className="link">
+            <Link to={`/movies/${movie.id}`} className="link">
               <div className="movie-poster" data-testid="movie-poster">
                 <img
                   src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
