@@ -109,15 +109,15 @@ const MovieDetails = () => {
           </li>
           <li>
             <img src={movieIcon} alt="movieIcon" />
-            <a href="#">Movies</a>
+            <Link href="#">Movies</Link>
           </li>
           <li>
             <img src={tvIcon} alt="tvIcon" />
-            <a href="#">TV Series</a>
+            <Link href="#">TV Series</Link>
           </li>
           <li>
             <img src={upcomingIcon} alt="upcomingIcon" />
-            <a href="#">Upcoming</a>
+            <Link href="#">Upcoming</Link>
           </li>
         </ul>
         <div>

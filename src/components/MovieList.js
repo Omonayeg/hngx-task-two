@@ -37,10 +37,11 @@ const MovieList = ({ movies }) => {
                 />
               </div>
               <div className="movie-info">
+               
+                <h4 data-testid="movie-title">{movie.original_title}</h4>
                 <p data-testid="movie-release-date">
                   {formatDateToUTC(movie.release_date)}
                 </p>
-                <h4 data-testid="movie-title">{movie.original_title}</h4>
               </div>
             </Link>
           </div>
