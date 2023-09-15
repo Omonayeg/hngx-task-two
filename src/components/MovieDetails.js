@@ -19,6 +19,7 @@ const MovieDetails = () => {
   const [movieData, setMovieData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
+  const [videoKey, setVideoKey] = useState("");
 
   const formatDateToUTC = (dateString) => {
     const options = {
@@ -32,35 +33,68 @@ const MovieDetails = () => {
 
   useEffect(() => {
     let isMounted = true;
-
-    fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`
-    )
-      .then((res) => {
-        if (!res.ok) {
-          throw Error("Couldn't fetch movie details...");
-        }
-        return res.json();
-      })
-      .then((movieData) => {
-        if (!isMounted) return;
-
-        console.log(movieData);
-        setMovieData(movieData);
-        setIsLoading(false);
-        setError("");
-      })
-      .catch((error) => {
-        console.error("There was a problem fetching movie details. Try again");
-        setIsLoading(false);
-        setError(error.message);
-      });
-
-    return () => (isMounted = false);
+  
+    // Set a timeout to simulate loading
+    const timeout = setTimeout(() => {
+      fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`)
+        .then((res) => {
+          if (!res.ok) {
+            throw Error("Couldn't fetch movie details...");
+          }
+          return res.json();
+        })
+        .then((movieData) => {
+          if (!isMounted) return;
+  
+          console.log(movieData);
+          setMovieData(movieData);
+          setIsLoading(false);
+          setError("");
+        })
+        .catch((error) => {
+          console.error("There was a problem fetching movie details. Try again");
+          setIsLoading(false);
+          setError(error.message);
+        });
+  
+      // Fetch video data
+      fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}&language=en-US`)
+        .then((res) => {
+          if (!res.ok) {
+            throw Error("Couldn't fetch movie videos...");
+          }
+          return res.json();
+        })
+        .then((videoData) => {
+          if (!isMounted) return;
+  
+          console.log(videoData);
+  
+          // Destructure the video key safely
+          const videoKey = videoData.results && videoData.results.length > 0
+            ? videoData.results[0].key
+            : 'Theres no trailer available as at this moment';
+  
+          setVideoKey(videoKey);
+        })
+        .catch((error) => {
+          console.error("There was a problem fetching movie videos. Try again");
+          setVideoKey("");
+        });
+    }, 500); // Adjust the timeout duration as needed (in milliseconds)
+  
+    return () => {
+      clearTimeout(timeout); // Clear the timeout
+      isMounted = false;
+    };
   }, [id, apiKey]);
+  
+
+  
 
   return (
     <div className="container">
+      
       <aside className="sidebar">
         {/* Sidebar Content */}
         <div className="logo">
@@ -94,14 +128,22 @@ const MovieDetails = () => {
       </aside>
 
       <main className="main-content">
-        {isLoading && <div>Loading....</div>}
-        {error && <div>{error}</div>}
+      {isLoading && (
+      <div className="loading">
+        <div className="spinner"></div>
+      </div>
+    )}
+      {error && <div>{error}</div>}
 
         {/* Main Content */}
-        {movieData.backdrop_path && (
-          <img
-            src={`https://image.tmdb.org/t/p/w500/${movieData.backdrop_path}`}
-            alt="thumbnail"
+        {videoKey && (
+          <iframe
+            width="98%"
+            height="320"
+            src={`https://www.youtube.com/embed/${videoKey}`}
+            frameBorder="0"
+            allowFullScreen
+            title="Embedded Video"
           />
         )}
 
@@ -121,7 +163,7 @@ const MovieDetails = () => {
                 <span data-testid="movie-runtime"> • 130m</span>
               </div>
               <br />
-              <p data-testid="movie-overview">{movieData.overview}</p>
+              <p data-testid="movie-overview" className="details-overview">{movieData.overview}</p>
             </div>
             <div className="row directors">
               <p>

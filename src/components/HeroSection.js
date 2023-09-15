@@ -47,7 +47,8 @@ const HeroSection = () => {
 
 
   return (
-    <div className="hero-section" style={{ backgroundImage: `url(${image})` }}>
+    <div className="hero-section" style={{ backgroundImage: `url(${image})`, loading: 'lazy'}}>
+      
       <nav className="nav">
         <div className="logo">
           <img src={logo} alt="Logo" />

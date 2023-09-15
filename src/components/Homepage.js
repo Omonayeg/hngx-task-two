@@ -49,8 +49,11 @@ const Homepage = () => {
   return (
     <div className="homepage">
       <HeroSection/> 
-      {isLoading && <div>Loading...</div>}
-
+      {isLoading && (
+      <div className="loading">
+        <div className="spinner"></div>
+      </div>
+    )}
       {error && <div>{error}</div>}
       <MovieList movies={data} />
       <Footer/>
