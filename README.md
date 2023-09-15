@@ -9,6 +9,7 @@ Moviebox is a React-based movie discovery website that allows users to search fo
 - Search movies: users can search for movies by title
 - Top Rated Movies: displays a section for top rated movies
 - Movie Details: users can view detailed information about each movie
+- Watch Trailer: users can watch trailers of their preferred movies to know what its all about.
 
 <hr/>
 
