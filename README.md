@@ -53,7 +53,8 @@ Note: Ensure that you have carefully added the TMDB API key (incase you insist o
 
 # 🍿 Demo 
 
-- Check out our live demo at https://bluebirdmovies.netlify.app/ 
+- Check out our live demo at
+  https://moviebox-discover.vercel.app/
    
 
 # 😍 Contribution
@@ -73,7 +74,7 @@ git remote add upstream https://github.com/Omonayeg/hngx-task-two.git
 
 ```
 
-4.  Pull upstream to get the latest update from the original repo (https://github.com/Omonayeg/HNGx.git)
+4.  Pull upstream to get the latest update from the original repo (https://github.com/Omonayeg/hngx-task-two.git)
 ```bash
 git pull upstream main
 ```
