@@ -85,7 +85,7 @@ const MovieDetails = () => {
           setVideoKey(videoKey);
         })
         .catch((error) => {
-          console.error("There was a problem fetching movie videos. Try again");
+          setError("There was a problem fetching movie videos. Try again");
           setVideoKey("");
         });
     }, 500); // Adjust the timeout duration as needed (in milliseconds)
