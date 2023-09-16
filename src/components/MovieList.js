@@ -8,6 +8,8 @@ const MovieList = ({ movies }) => {
 
   // Slice the first 10 movies to get the top 10 by popularity
   const top10Movies = sortedMovies.slice(0, 10);
+  // const top10Movies = sortedMovies.slice(0, 12); Use later
+
 
   // Function to format the date to UTC format
   const formatDateToUTC = (dateString) => {

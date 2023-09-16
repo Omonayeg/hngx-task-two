@@ -106,7 +106,7 @@ const HeroSection = () => {
                 <h3>Search Results:</h3>
                 <ul>
                   {searchResults.map((result) => (
-                    <Link to={`/movie_details/${result.id}`} className="link">
+                    <Link to={`/movies/${result.id}`} className="link">
                       <li key={result.id}>
                         <img
                           src={`https://image.tmdb.org/t/p/w200/${result.poster_path}`}
