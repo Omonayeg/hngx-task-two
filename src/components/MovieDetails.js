@@ -33,10 +33,12 @@ const MovieDetails = () => {
 
   useEffect(() => {
     let isMounted = true;
-  
+
     // Set a timeout to simulate loading
     const timeout = setTimeout(() => {
-      fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`)
+      fetch(
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`
+      )
         .then((res) => {
           if (!res.ok) {
             throw Error("Couldn't fetch movie details...");
@@ -45,20 +47,24 @@ const MovieDetails = () => {
         })
         .then((movieData) => {
           if (!isMounted) return;
-  
+
           console.log(movieData);
           setMovieData(movieData);
           setIsLoading(false);
           setError("");
         })
         .catch((error) => {
-          console.error("There was a problem fetching movie details. Try again");
+          console.error(
+            "There was a problem fetching movie details. Try again"
+          );
           setIsLoading(false);
           setError(error.message);
         });
-  
+
       // Fetch video data
-      fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}&language=en-US`)
+      fetch(
+        `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}&language=en-US`
+      )
         .then((res) => {
           if (!res.ok) {
             throw Error("Couldn't fetch movie videos...");
@@ -67,14 +73,15 @@ const MovieDetails = () => {
         })
         .then((videoData) => {
           if (!isMounted) return;
-  
+
           console.log(videoData);
-  
+
           // Destructure the video key safely
-          const videoKey = videoData.results && videoData.results.length > 0
-            ? videoData.results[0].key
-            : 'Theres no trailer available as at this moment';
-  
+          const videoKey =
+            videoData.results && videoData.results.length > 0
+              ? videoData.results[0].key
+              : "Theres no trailer available as at this moment";
+
           setVideoKey(videoKey);
         })
         .catch((error) => {
@@ -82,19 +89,15 @@ const MovieDetails = () => {
           setVideoKey("");
         });
     }, 500); // Adjust the timeout duration as needed (in milliseconds)
-  
+
     return () => {
       clearTimeout(timeout); // Clear the timeout
       isMounted = false;
     };
   }, [id, apiKey]);
-  
-
-  
 
   return (
     <div className="container">
-      
       <aside className="sidebar">
         {/* Sidebar Content */}
         <div className="logo">
@@ -109,15 +112,15 @@ const MovieDetails = () => {
           </li>
           <li>
             <img src={movieIcon} alt="movieIcon" />
-            <Link href="#">Movies</Link>
+            <Link psth="">Movies</Link>
           </li>
           <li>
             <img src={tvIcon} alt="tvIcon" />
-            <Link href="#">TV Series</Link>
+            <Link path="">TV Series</Link>
           </li>
           <li>
             <img src={upcomingIcon} alt="upcomingIcon" />
-            <Link href="#">Upcoming</Link>
+            <Link path="">Upcoming</Link>
           </li>
         </ul>
         <div>
@@ -128,12 +131,12 @@ const MovieDetails = () => {
       </aside>
 
       <main className="main-content">
-      {isLoading && (
-      <div className="loading">
-        <div className="spinner"></div>
-      </div>
-    )}
-      {error && <div>{error}</div>}
+        {isLoading && (
+          <div className="loading">
+            <div className="spinner"></div>
+          </div>
+        )}
+        {error && <div>{error}</div>}
 
         {/* Main Content */}
         {videoKey && (
@@ -163,7 +166,9 @@ const MovieDetails = () => {
                 <span data-testid="movie-runtime"> • 130m</span>
               </div>
               <br />
-              <p data-testid="movie-overview" className="details-overview">{movieData.overview}</p>
+              <p data-testid="movie-overview" className="details-overview">
+                {movieData.overview}
+              </p>
             </div>
             <div className="row directors">
               <p>

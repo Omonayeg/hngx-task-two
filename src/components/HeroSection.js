@@ -45,10 +45,11 @@ const HeroSection = () => {
     }
   };
 
-
   return (
-    <div className="hero-section" style={{ backgroundImage: `url(${image})`, loading: 'lazy'}}>
-      
+    <div
+      className="hero-section"
+      style={{ backgroundImage: `url(${image})`, loading: "lazy" }}
+    >
       <nav className="nav">
         <div className="logo">
           <img src={logo} alt="Logo" />
@@ -62,7 +63,7 @@ const HeroSection = () => {
               backgroundImage: `url(${searchBtn})`,
               backgroundRepeat: "no-repeat",
               backgroundPosition: "right",
-              fontSize: '1.1rem'
+              fontSize: "1.1rem",
             }}
             onChange={(e) => {
               setSearch(e.target.value);

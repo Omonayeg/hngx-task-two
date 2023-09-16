@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import fb from "../Designs/assets/fa-brands_facebook-square.png"
 import ig from "../Designs/assets/fa-brands_instagram.png"
 import twt from "../Designs/assets/fa-brands_twitter.png"
@@ -7,16 +8,16 @@ const Footer = () => {
     return (  
         <div className="footer">
           <div className="socials">
-            <a href=""><img src={fb} alt="fb" /></a>
-            <a href=""><img src={ig} alt="ig" /></a>
-            <a href=""><img src={twt} alt="twt" /></a>
-            <a href=""><img src={ytb} alt="ytb" /></a>
+            <Link path=""><img src={fb} alt="fb" /></Link>
+            <Link path=""><img src={ig} alt="ig" /></Link>
+            <Link path=""><img src={twt} alt="twt" /></Link>
+            <Link path=""><img src={ytb} alt="ytb" /></Link>
 
           </div>
       <nav className="footer-nav">
-        <a href="#">Conditions of Use</a>
-        <a href="#">Privacy and Policy</a>
-        <a href="#">Privacy Room</a>
+        <Link path="">Conditions of Use</Link>
+        <Link path="">Privacy and Policy</Link>
+        <Link path="">Privacy Room</Link>
       </nav>
       <small>&copy;2023 <strong>Moviebox by Will Omonaye</strong>, All Rights Reserved</small>
         </div>

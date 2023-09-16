@@ -10,7 +10,6 @@ const MovieList = ({ movies }) => {
   const top10Movies = sortedMovies.slice(0, 10);
   // const top10Movies = sortedMovies.slice(0, 12); Use later
 
-
   // Function to format the date to UTC format
   const formatDateToUTC = (dateString) => {
     const options = {
@@ -39,7 +38,6 @@ const MovieList = ({ movies }) => {
                 />
               </div>
               <div className="movie-info">
-               
                 <h4 data-testid="movie-title">{movie.original_title}</h4>
                 <p data-testid="movie-release-date">
                   {formatDateToUTC(movie.release_date)}
