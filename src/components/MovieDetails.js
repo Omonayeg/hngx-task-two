@@ -21,15 +21,15 @@ const MovieDetails = () => {
   const [error, setError] = useState("");
   const [videoKey, setVideoKey] = useState("");
 
-  const formatDateToUTC = (dateString) => {
-    const options = {
-      timeZone: "UTC",
-      year: "numeric",
-      month: "numeric",
-      day: "numeric",
-    };
-    return new Date(dateString).toLocaleDateString("en-US", options);
-  };
+  // const formatDateToUTC = (dateString) => {
+  //   const options = {
+  //     timeZone: "UTC",
+  //     year: "numeric",
+  //     month: "numeric",
+  //     day: "numeric",
+  //   };
+  //   return new Date(dateString).toLocaleDateString("en-US", options);
+  // };
 
   useEffect(() => {
     let isMounted = true;
@@ -160,7 +160,7 @@ const MovieDetails = () => {
                 <span data-testid="movie-title">{movieData.title}</span>
                 <span data-testid="movie-release-date">
                   {" "}
-                  • {formatDateToUTC(movieData.release_date)}
+                  • {movieData.release_date}
                 </span>
                 <span> • PG-15</span>
                 <span data-testid="movie-runtime"> • 130m</span>

@@ -11,15 +11,15 @@ const MovieList = ({ movies }) => {
   // const top10Movies = sortedMovies.slice(0, 12); Use later
 
   // Function to format the date to UTC format
-  const formatDateToUTC = (dateString) => {
-    const options = {
-      timeZone: "UTC",
-      year: "numeric",
-      month: "numeric",
-      day: "numeric",
-    };
-    return new Date(dateString).toLocaleDateString("en-US", options);
-  };
+  // const formatDateToUTC = (dateString) => {
+  //   const options = {
+  //     timeZone: "UTC",
+  //     year: "numeric",
+  //     month: "numeric",
+  //     day: "numeric",
+  //   };
+  //   return new Date(dateString).toLocaleDateString("en-US", options);
+  // };
 
   return (
     <div className="wrapper">
@@ -40,7 +40,8 @@ const MovieList = ({ movies }) => {
               <div className="movie-info">
                 <h4 data-testid="movie-title">{movie.original_title}</h4>
                 <p data-testid="movie-release-date">
-                  {formatDateToUTC(movie.release_date)}
+                  {/* {formatDateToUTC(movie.release_date)} */}
+                  {movie.release_date}
                 </p>
               </div>
             </Link>
