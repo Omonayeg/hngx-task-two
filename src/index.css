@@ -150,7 +150,8 @@ h3 {
 }
 
 .cards {
-  display: flex;
+  /* display: flex; */
+  display: grid;
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
