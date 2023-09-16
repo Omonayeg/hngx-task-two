@@ -158,13 +158,16 @@ const MovieDetails = () => {
                 style={{ fontWeight: "700", fontSize: "18px" }}
               >
                 <span data-testid="movie-title">{movieData.title}</span>
-                <span data-testid="movie-release-date">
+                <span data-testid="movie-release-date">{movieData.release_date}</span>
+                <span>PG-15</span>
+                <span data-testid="movie-runtime">130m</span>
+              </div>
+              {/* <span data-testid="movie-release-date">
                   {" "}
                   • {movieData.release_date}
                 </span>
                 <span> • PG-15</span>
-                <span data-testid="movie-runtime"> • 130m</span>
-              </div>
+                <span data-testid="movie-runtime"> • 130m< */}
               <br />
               <p data-testid="movie-overview" className="details-overview">
                 {movieData.overview}

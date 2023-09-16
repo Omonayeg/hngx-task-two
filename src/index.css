@@ -420,6 +420,10 @@ strong {
   padding: 10px;
 }
 
+.column-left .row span {
+  padding: 6px;
+}
+
 .column-right {
   /* flex: 1; */
   padding: 5px;
