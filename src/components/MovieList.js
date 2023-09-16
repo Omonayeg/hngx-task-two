@@ -38,8 +38,9 @@ const MovieList = ({ movies }) => {
         {top10Movies.map((movie) => (
           <div key={movie.id} className="card" data-testid="movie-card">
             <Link to={`/movies/${movie.id}`} className="link">
-              <div className="movie-poster" data-testid="movie-poster">
+              <div className="movie-poster" >
                 <img
+                  data-testid="movie-poster"
                   src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
                   alt="poster-img"
                 />
