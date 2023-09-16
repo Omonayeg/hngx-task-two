@@ -11,15 +11,22 @@ const MovieList = ({ movies }) => {
   // const top10Movies = sortedMovies.slice(0, 12); Use later
 
   // Function to format the date to UTC format
-  // const formatDateToUTC = (dateString) => {
-  //   const options = {
-  //     timeZone: "UTC",
-  //     year: "numeric",
-  //     month: "numeric",
-  //     day: "numeric",
-  //   };
-  //   return new Date(dateString).toLocaleDateString("en-US", options);
-  // };
+  const formatDateToUTC = (dateString) => {
+    const options = {
+      timeZone: "UTC",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      weekday: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit"
+    };
+    
+    return new Date(dateString).toUTCString("en-US", options)
+      .replace(",", ""); // Remove the comma after the weekday
+  };
+
 
   return (
     <div className="wrapper">
@@ -39,7 +46,7 @@ const MovieList = ({ movies }) => {
               </div>
               <div className="movie-info">
                 <h4 data-testid="movie-title">{movie.original_title}</h4>
-                <p data-testid="movie-release-date">{movie.release_date}</p>
+                <p data-testid="movie-release-date">{formatDateToUTC(movie.release_date)}</p>
                   {/* {formatDateToUTC(movie.release_date)} */}
               </div>
             </Link>
