@@ -160,7 +160,7 @@ const MovieDetails = () => {
                 <span data-testid="movie-title">{movieData.title}</span>
                 <span data-testid="movie-release-date">{movieData.release_date}</span>
                 <span>PG-15</span>
-                <span data-testid="movie-runtime">130m</span>
+                <span data-testid="movie-runtime">130</span>
               </div>
               {/* <span data-testid="movie-release-date">
                   {" "}
