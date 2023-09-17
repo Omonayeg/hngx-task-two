@@ -5,13 +5,13 @@ import { useEffect, useState } from "react";
 
 const Homepage = () => {
   const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
     let isMounted = true;
 
-    setTimeout(() => {
+    
       // fetch('https://api.themoviedb.org/3/discover/movie?api_key=645913d6fd2e28915ca004c97498dfb2&sort_by=popularity.desc')
       //   https://api.themoviedb.org/3/movies/[movie_id]
 
@@ -31,16 +31,16 @@ const Homepage = () => {
         .then((data) => {
           if (!isMounted) return;
 
-          console.log(data);
+          // console.log(data);
           setData(data.results);
-          setIsLoading(false);
+          // setIsLoading(false);
           setError("");
         })
         .catch((err) => {
           setError(err);
-          setIsLoading(false);
+          // setIsLoading(false);
         });
-    }, 1000);
+    ;
 
     return () => (isMounted = false);
   }, []);
@@ -48,11 +48,11 @@ const Homepage = () => {
   return (
     <div className="homepage">
       <HeroSection />
-      {isLoading && (
+      {/* {isLoading && (
         <div className="loading">
           <div className="spinner"></div>
         </div>
-      )}
+      )} */}
       {error && <div>{error}</div>}
       <MovieList movies={data} />
       <Footer />

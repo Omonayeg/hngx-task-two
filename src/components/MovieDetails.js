@@ -45,7 +45,6 @@ const MovieDetails = () => {
     let isMounted = true;
 
     // Set a timeout to simulate loading
-    const timeout = setTimeout(() => {
       fetch(
         `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`
       )
@@ -73,7 +72,7 @@ const MovieDetails = () => {
 
       // Fetch video data
       fetch(
-        `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}&language=en-US`
+        `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}`
       )
         .then((res) => {
           if (!res.ok) {
@@ -98,10 +97,10 @@ const MovieDetails = () => {
           setError("There was a problem fetching movie videos. Try again");
           setVideoKey("");
         });
-    }, 500); // Adjust the timeout duration as needed (in milliseconds)
+     // Adjust the timeout duration as needed (in milliseconds)
 
     return () => {
-      clearTimeout(timeout); // Clear the timeout
+      // clearTimeout(timeout); // Clear the timeout
       isMounted = false;
     };
   }, [id, apiKey]);
@@ -172,7 +171,7 @@ const MovieDetails = () => {
                 <span data-testid="movie-title">{movieData.title}</span>
                 <span data-testid="movie-release-date"> {formatDateToUTC(movieData.release_date)}</span>
                 <span>PG-15</span>
-                <span data-testid="movie-runtime">130</span>
+                <span data-testid="movie-runtime">{movieData.runtime}</span>
               </div>
               {/* <span data-testid="movie-release-date">
                   {" "}
