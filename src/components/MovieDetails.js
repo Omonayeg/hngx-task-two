@@ -17,7 +17,7 @@ const MovieDetails = () => {
   const apiKey = "645913d6fd2e28915ca004c97498dfb2";
 
   const [movieData, setMovieData] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
   const [videoKey, setVideoKey] = useState("");
 
@@ -59,14 +59,14 @@ const MovieDetails = () => {
 
           console.log(movieData);
           setMovieData(movieData);
-          setIsLoading(false);
+          // setIsLoading(false);
           setError("");
         })
         .catch((error) => {
           console.error(
             "There was a problem fetching movie details. Try again"
           );
-          setIsLoading(false);
+          // setIsLoading(false);
           setError(error.message);
         });
 
@@ -140,11 +140,11 @@ const MovieDetails = () => {
       </aside>
 
       <main className="main-content">
-        {isLoading && (
+        {/* {isLoading && (
           <div className="loading">
             <div className="spinner"></div>
           </div>
-        )}
+        )} */}
         {error && <div>{error}</div>}
 
         {/* Main Content */}
