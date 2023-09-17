@@ -12,7 +12,7 @@ const HeroSection = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [searchError, setSearchError] = useState(false); // Add a state
   const [error, setError] = useState(false); // Add a state
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
   const apiKey = "645913d6fd2e28915ca004c97498dfb2";
 
@@ -36,7 +36,7 @@ const HeroSection = () => {
         setSearchResults(data.results);
         setSearch("");
         setShowModal(true);
-        setIsLoading(false);
+        // setIsLoading(false);
         setError("");
       } catch (error) {
         setError(error);
@@ -96,7 +96,7 @@ const HeroSection = () => {
         <div className="modal">
           <div className="modal-content">
             <button onClick={() => setShowModal(false)}>Close</button>
-            {isLoading && <div>Loading....</div>}
+            {/* {isLoading && <div>Loading....</div>} */}
             {error && <div>{error}</div>}
             {searchError ? ( // Render "Movie not found" if searchError is true
               <div style={{ fontSize: "40px", color: "black" }}>
