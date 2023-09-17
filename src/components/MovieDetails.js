@@ -46,7 +46,7 @@ const MovieDetails = () => {
 
     // Set a timeout to simulate loading
       fetch(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`
       )
         .then((res) => {
           if (!res.ok) {
